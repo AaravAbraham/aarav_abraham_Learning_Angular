@@ -1,24 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Product } from './models/app_interface';
+import { Product } from './models/product';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-first-project';
-    myName: string = "Aarav Abraham";
-    myCourse: string = "MAD 307 - JavaScript Frameworks";
-    products: Product[] = [
-      { id: 1, name: 'Guitar', price: 450, category: 'String',  },
-      { id: 2, name: 'Drums', price: 799, category: 'Purcussion' },
-      { id: 3, name: 'Flute', price: 199, category: 'Wind', description: 'Steel type 18 tabs flute' },
-      { id: 4, name: 'Electric Guitar', price: 49, category: 'Electronics',description: 'Gibson 7 string guitar s=with tremolo' },
-      { id: 5, name: 'Keyboard', price: 299, category: 'Electronics', description: 'Electronic Keyboard with 106 types of music samples' },
-      { id: 6, name: 'Violin', price: 249, category: 'String' }
-    ];
-  }
-  
+  title: string = 'Instrument Store';
+  products: Product[] = [
+    { id: 1, name: 'Guitar', type: 'String', price: 499, description: 'Acoustic guitar with excellent sound quality.' },
+    { id: 2, name: 'Piano', type: 'String', price: 2999, description: 'Grand piano with rich tones and elegant design.' },
+    { id: 3, name: 'Drums', type: 'Percussion', price: 699, description: 'Complete drum set for beginners.' },
+    { id: 4, name: 'Flute', type: 'Wind', price: 199, description: 'Silver flute with bright, clear sound.' },
+    { id: 5, name: 'Violin', type: 'String', price: 799, description: 'Classical violin, handcrafted with fine wood.' },
+    { id: 6, name: 'Trumpet', type: 'Brass', price: 399, description: 'High-quality brass trumpet for professional use.' }
+  ];
+}
