@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from './models/product';
-
+import { Product } from './models/product'; 
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,9 @@ import { Product } from './models/product';
 })
 export class AppComponent {
   title: string = 'Instrument Store';
+  myName: string = "Your Name";
+  myCourse: string = "MAD 307 - JavaScript Frameworks";
+
   products: Product[] = [
     { id: 1, name: 'Guitar', type: 'String', price: 499, description: 'Acoustic guitar with excellent sound quality.' },
     { id: 2, name: 'Piano', type: 'String', price: 2999, description: 'Grand piano with rich tones and elegant design.' },
