@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Product } from './models/product'; 
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  imports:[NgFor],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
