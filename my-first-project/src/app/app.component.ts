@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from './models/product'; 
 import { NgFor } from '@angular/common';
+import { InstrumentListComponent } from './instrument-list/instrument-list.component';
 
 @Component({
   selector: 'app-root',
-  imports:[NgFor],
+  imports:[NgFor,InstrumentListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
