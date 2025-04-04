@@ -1,13 +1,5 @@
-import { Component } from '@angular/core';
 import { Product } from '../models/product';
 
-@Component({
-  selector: 'app-instrument-list',
-  standalone: true,
-  imports: [],
-  templateUrl: './instrument-list.component.html',
-  styleUrl: './instrument-list.component.scss'
-})
 export class InstrumentListComponent {
    accesories : Product[]= [
       { id: 1, name: 'Bag', type: 'String', price: 49 },
