@@ -1,15 +1,15 @@
-.accessory-item {
+.accessory-list{
     border: 2px solid black;
     padding: 10px;
     margin: 10px;
     text-align: center;
   }
   
-  :host:nth-child(odd) {
+  :nth-child(odd) {
     background-color: teal;
   }
   
-  :host:nth-child(even) {
+  :nth-child(even) {
     background-color: pink;
   }
   
