@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from './models/product'; 
 import { NgFor } from '@angular/common';
 import { InstrumentListComponent } from './instrument-list/instrument-list.component';
-
+import { StoreService } from './services/instrument-store.service';
 @Component({
   selector: 'app-root',
   imports:[NgFor,InstrumentListComponent],
@@ -10,7 +10,7 @@ import { InstrumentListComponent } from './instrument-list/instrument-list.compo
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title: string = 'Instrument Store';
+  title: string = 'my-first-project';
   myName: string = "Your Name";
   myCourse: string = "MAD 307 - JavaScript Frameworks";
 

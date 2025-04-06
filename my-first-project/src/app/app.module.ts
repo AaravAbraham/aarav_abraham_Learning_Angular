@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common'; 
 import { AppComponent } from './app.component';
 import { InstrumentListComponent } from './instrument-list/instrument-list.component';
 import { InstrumentListItemComponent } from './instrument-list-item/instrument-list-item.component'; 
@@ -12,9 +11,9 @@ import { InstrumentListItemComponent } from './instrument-list-item/instrument-l
     InstrumentListItemComponent
   ],
   imports: [
-    BrowserModule,
-    CommonModule  
+    BrowserModule 
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

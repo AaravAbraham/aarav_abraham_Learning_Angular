@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
+import { StoreService } from '../services/instrument-store.service';
+import { NgForOf } from '@angular/common';
+import { MOCK_CONTENT } from '../data/mock-content';
 
 @Component({
-  selector: 'app-instrument-list',
-  standalone: true,
-  imports: [],
+  selector: 'app-instrument-list', 
+  imports:[NgForOf,InstrumentListComponent],
   templateUrl: './instrument-list.component.html',
   styleUrl: './instrument-list.component.scss'
 })
-export class InstrumentListComponent {
-   accesories : Product[]= [
-      { id: 1, name: 'Bag', type: 'String', price: 49 },
-      { id: 2, name: 'Pedal', type: 'String', price: 299 },
-      { id: 3, name: 'Case', type: 'Percussion', price: 699 },
-      { id: 4, name: 'Strings', type: 'Wind', price: 199},
-   ]
-
-}
+export class InstrumentListComponent implements OnInit {
+   accessories: Product[] = MOCK_CONTENT;
+ 
+   constructor(private storeService: StoreService) {}
+ 
+   ngOnInit(): void {
+     this.storeService.getAllContent().subscribe(data => {
+       this.accessories = data;
+     });
+   }
+ }
