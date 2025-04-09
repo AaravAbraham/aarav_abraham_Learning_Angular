@@ -1,4 +1,11 @@
+
 <body>
+  <div class="navigate">
+  <nav>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="modify" routerLinkActive="active">Modify List</a> 
+  </nav>
+</div>
 <div class="product-list">
   <h2>Product List</h2>
   <div *ngFor="let product of products">
@@ -6,8 +13,9 @@
     <p>{{ product.description || 'No description available' }}</p>
     <p><strong>Price: </strong>{{ product.price }} USD</p>
     <p><strong>Type: </strong>{{ product.type }}</p>
-  </div>
-  <app-instrument-list></app-instrument-list>
-</div>
 
+  </div>
+</div>
+<app-instrument-list></app-instrument-list>
+<router-outlet></router-outlet>
 </body>

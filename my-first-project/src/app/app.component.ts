@@ -3,9 +3,10 @@ import { Product } from './models/product';
 import { NgFor } from '@angular/common';
 import { InstrumentListComponent } from './instrument-list/instrument-list.component';
 import { StoreService } from './services/instrument-store.service';
+import {RouterLinkActive,RouterOutlet,RouterLink } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports:[NgFor,InstrumentListComponent],
+  imports:[NgFor,InstrumentListComponent,RouterLink,RouterLinkActive,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

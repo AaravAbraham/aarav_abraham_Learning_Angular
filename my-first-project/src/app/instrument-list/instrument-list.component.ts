@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import { MOCK_CONTENT } from '../data/mock-content'; 
 import { NgFor } from '@angular/common';
 import { InstrumentListItemComponent } from '../instrument-list-item/instrument-list-item.component';
+import { StoreService } from '../services/instrument-store.service';
 
 @Component({
   selector: 'app-instrument-list',
