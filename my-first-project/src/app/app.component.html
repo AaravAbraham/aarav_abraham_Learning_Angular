@@ -11,11 +11,10 @@
   <div *ngFor="let product of products">
     <h3>{{ product.name }}</h3>
     <p>{{ product.description || 'No description available' }}</p>
-    <p><strong>Price: </strong>{{ product.price }} USD</p>
+    <p><strong>Price: </strong>$ {{ product.price | priceTag }} </p>
     <p><strong>Type: </strong>{{ product.type }}</p>
-
-    <button (click)="editProduct(product.id)">Edit</button>
-    <button (click)="deleteProduct(product.id)">Delete</button>
+    <p><strong>{{ today | date:'fullDate' }}</strong></p>
+    
   </div>
 </div>
 <router-outlet></router-outlet>
