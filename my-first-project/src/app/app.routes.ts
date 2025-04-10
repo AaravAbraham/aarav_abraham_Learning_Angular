@@ -5,6 +5,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 export const routes: Routes = [
   { path: 'home', component: InstrumentListComponent },
-  { path: 'modify', component: ModifyListItemComponent },
+  { path: 'edit/:id', component: ModifyListItemComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
