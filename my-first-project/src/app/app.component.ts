@@ -23,4 +23,25 @@ export class AppComponent {
     { id: 5, name: 'Violin', type: 'String', price: 799, description: 'Classical violin, handcrafted with fine wood.' },
     { id: 6, name: 'Trumpet', type: 'Brass', price: 399, description: 'High-quality brass trumpet for professional use.' }
   ];
+  
+  router: any;
+  constructor(private storeService: StoreService) {}
+
+  
+
+  ngOnInit() {
+    this.storeService.getAllContent().subscribe(items => {
+      this.products = items;
+    });
+  }
+
+  editItem(id: number) {
+    this.router.navigate(['/edit', id]); 
+  }
+
+  deleteItem(id: number) {
+    this.storeService.deleteContent(id).subscribe(() => {
+      this.products = this.products.filter(item => item.id !== id);
+    });
+  }
 }

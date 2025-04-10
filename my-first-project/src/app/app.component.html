@@ -14,8 +14,9 @@
     <p><strong>Price: </strong>{{ product.price }} USD</p>
     <p><strong>Type: </strong>{{ product.type }}</p>
 
+    <button (click)="editProduct(product.id)">Edit</button>
+    <button (click)="deleteProduct(product.id)">Delete</button>
   </div>
 </div>
-<app-instrument-list></app-instrument-list>
 <router-outlet></router-outlet>
 </body>

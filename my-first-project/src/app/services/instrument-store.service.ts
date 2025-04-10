@@ -1,48 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 import { Product } from '../models/product';
-import { MOCK_CONTENT} from '../data/mock-content';
+import { MOCK_CONTENT } from '../data/mock-content';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
-  [x: string]: any;
-  private contentArray: Product[] = MOCK_CONTENT;
+  private contentSubject = new BehaviorSubject<Product[]>(MOCK_CONTENT);
+  content$ = this.contentSubject.asObservable();
 
+  constructor() {}
 
   getAllContent(): Observable<Product[]> {
-    return of(this.contentArray);
+    return this.content$;
   }
 
-
   getContentById(id: number): Observable<Product | undefined> {
-    const item = this.contentArray.find(content => content.id === id);
+    const item = this.contentSubject.value.find(content => content.id === id);
     return of(item);
   }
 
-
   addContent(newContent: Product): Observable<Product[]> {
-    this.contentArray.push(newContent);
-    return of(this.contentArray);
+    this.contentSubject.next([...this.contentSubject.value, newContent]);
+    return this.content$;
   }
-
 
   updateContent(updatedContent: Product): Observable<Product[]> {
-    const index = this.contentArray.findIndex(content => content.id === updatedContent.id);
-    if (index !== -1) {
-      this.contentArray[index] = updatedContent;
-    }
-    return of(this.contentArray);
+    const updatedContentArray = this.contentSubject.value.map(content =>
+      content.id === updatedContent.id ? updatedContent : content
+    );
+    this.contentSubject.next(updatedContentArray);
+    return this.content$;
   }
 
-
   deleteContent(id: number): Observable<Product | undefined> {
-    const index = this.contentArray.findIndex(content => content.id === id);
-    if (index !== -1) {
-      const removedItem = this.contentArray.splice(index, 1)[0];
-      return of(removedItem);
-    }
-    return of(undefined);
+    const updatedContentArray = this.contentSubject.value.filter(content => content.id !== id);
+    const deletedItem = this.contentSubject.value.find(content => content.id === id);
+    this.contentSubject.next(updatedContentArray);
+    return of(deletedItem);
   }
 }

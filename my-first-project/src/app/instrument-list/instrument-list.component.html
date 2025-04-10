@@ -1,3 +1,7 @@
-<div>
-<app-instrument-list-item *ngFor="let accessory of accessories" [product]="accessory"></app-instrument-list-item>
-</div>
+<div *ngFor="let accessory of accessories">
+    <app-instrument-list-item [product]="accessory"></app-instrument-list-item>
+  
+    <button (click)="editItem(accessory.id)">Edit</button>
+    <button (click)="deleteItem(accessory.id)">Delete</button>
+  </div>
+  
