@@ -1,7 +1,8 @@
   <div class="accessory-item">
     <h3>{{ product.id }} - {{ product.name }}</h3>
-    <p>Type: {{ product.type }}</p>
+    <p>Type: {{ product.type | uppercase }}</p>
     <p>Description: {{ product.description }}</p>
 
-    <p>Price: ${{ product.price }}</p>
+    <p>Price: ${{ product.price | priceTag }}</p>
+    <p>{{ today | date:'fullDate' }}</p>
   </div>
