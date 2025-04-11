@@ -1,7 +1,7 @@
-<div *ngFor="let accessory of accessories">
+<div *ngFor="let accessory of accessories"  [appHoverHighlight]="'lightblue'">
     <app-instrument-list-item [product]="accessory"></app-instrument-list-item>
   
-    <button (click)="editItem(accessory.id)">Edit</button>
-    <button (click)="deleteItem(accessory.id)">Delete</button>
+    <button [appHoverHighlight]="'red'"(click)="editItem(accessory.id)" >Edit</button>
+    <button [appHoverHighlight]="'red'"(click)="deleteItem(accessory.id)">Delete</button>
   </div>
   

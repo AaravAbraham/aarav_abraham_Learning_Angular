@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';  // Import RouterTestingModule
+import { RouterTestingModule } from '@angular/router/testing';  
 import { InstrumentListComponent } from './instrument-list.component';
 import { InstrumentListItemComponent } from '../instrument-list-item/instrument-list-item.component'; 
 

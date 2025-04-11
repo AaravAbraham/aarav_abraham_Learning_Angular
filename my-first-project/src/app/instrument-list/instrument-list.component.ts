@@ -5,12 +5,13 @@ import { NgFor } from '@angular/common';
 import { InstrumentListItemComponent } from '../instrument-list-item/instrument-list-item.component';
 import { StoreService } from '../services/instrument-store.service';
 import { Router } from '@angular/router';
-
+import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
+import { HighlightOnFocusDirective } from '../components/highlight-on-focus.directive';
 @Component({
   selector: 'app-instrument-list',
   templateUrl: './instrument-list.component.html',
   styleUrls: ['./instrument-list.component.scss'],
-  imports: [NgFor, InstrumentListItemComponent],
+  imports: [NgFor, InstrumentListItemComponent,HoverHighlightDirective,HighlightOnFocusDirective],
   standalone: true
 })
 

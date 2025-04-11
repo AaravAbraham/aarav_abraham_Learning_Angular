@@ -6,9 +6,10 @@ import { InstrumentListComponent } from './instrument-list/instrument-list.compo
 import { StoreService } from './services/instrument-store.service';
 import { PriceTagPipe } from './pipes/price-tag.pipe';
 import {RouterLinkActive,RouterOutlet,RouterLink } from '@angular/router';
+import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 @Component({
   selector: 'app-root',
-  imports:[NgFor,InstrumentListComponent,RouterLink,RouterLinkActive,RouterOutlet,CommonModule,PriceTagPipe],
+  imports:[NgFor,InstrumentListComponent,RouterLink,RouterLinkActive,RouterOutlet,CommonModule,PriceTagPipe,HoverHighlightDirective],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

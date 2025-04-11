@@ -1,25 +1,25 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" formControlName="name" type="text" class="form-control" placeholder="Enter name" />
+      <input id="name" formControlName="name" type="text" class="form-control" placeholder="Enter name" [appHighlightOnFocus]="'green'" />
     </div>
   
     <div class="form-group">
       <label for="type">Type</label>
-      <input id="type" formControlName="type" type="text" class="form-control" placeholder="Enter type" />
+      <input id="type" formControlName="type" type="text" class="form-control" placeholder="Enter type" [appHighlightOnFocus]="'green'" />
     </div>
   
     <div class="form-group">
       <label for="price">Price</label>
-      <input id="price" formControlName="price" type="number" class="form-control" placeholder="Enter price" />
+      <input id="price" formControlName="price" type="number" class="form-control" placeholder="Enter price"[appHighlightOnFocus]="'green'" />
     </div>
 
     <div class="form-group">
         <label for="description">Description</label>
-        <input id="description" formControlName="description" type="text" class="form-control" placeholder="Enter description" />
+        <input id="description" formControlName="description" type="text" class="form-control" placeholder="Enter description"[appHighlightOnFocus]="'blue'" />
       </div>
   
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
-    <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+    <button [appHighlightOnFocus]="'red'" type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+    <button [appHighlightOnFocus]="'red'" type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
   </form>
   

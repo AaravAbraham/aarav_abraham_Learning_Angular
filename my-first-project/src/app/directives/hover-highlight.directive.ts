@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appHoverHighlight]',
@@ -7,13 +7,13 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 export class HoverHighlightDirective {
   @Input() appHoverHighlight: string = 'yellow';
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', this.appHoverHighlight);
+    this.el.nativeElement.style.backgroundColor = this.appHoverHighlight;
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.renderer.removeStyle(this.el.nativeElement, 'backgroundColor');
+    this.el.nativeElement.style.backgroundColor = '';
   }
 }

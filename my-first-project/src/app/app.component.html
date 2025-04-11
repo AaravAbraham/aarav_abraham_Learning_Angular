@@ -8,7 +8,7 @@
 </div>
 <div class="product-list">
   <h2>Product List</h2>
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products" [appHoverHighlight]="'lightblue'">
     <h3>{{ product.name }}</h3>
     <p>{{ product.description || 'No description available' }}</p>
     <p><strong>Price: </strong>$ {{ product.price | priceTag }} </p>

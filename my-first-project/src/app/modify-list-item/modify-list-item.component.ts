@@ -3,13 +3,14 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { StoreService } from '../services/instrument-store.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { HighlightOnFocusDirective } from '../components/highlight-on-focus.directive';
+import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
 @Component({
   selector: 'app-modify-list-item',
   templateUrl: './modify-list-item.component.html',
   styleUrls: ['./modify-list-item.component.scss'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule,HighlightOnFocusDirective,HoverHighlightDirective]
 })
 export class ModifyListItemComponent {
   form!: FormGroup;
