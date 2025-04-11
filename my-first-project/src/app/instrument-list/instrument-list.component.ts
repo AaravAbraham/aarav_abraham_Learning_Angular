@@ -7,11 +7,18 @@ import { StoreService } from '../services/instrument-store.service';
 import { Router } from '@angular/router';
 import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
 import { HighlightOnFocusDirective } from '../components/highlight-on-focus.directive';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card'; 
 @Component({
   selector: 'app-instrument-list',
   templateUrl: './instrument-list.component.html',
   styleUrls: ['./instrument-list.component.scss'],
-  imports: [NgFor, InstrumentListItemComponent,HoverHighlightDirective,HighlightOnFocusDirective],
+  imports: [NgFor, InstrumentListItemComponent,HoverHighlightDirective,HighlightOnFocusDirective,
+    MatFormFieldModule,MatInputModule,MatCardModule,MatButtonModule,MatTooltipModule
+  ],
   standalone: true
 })
 

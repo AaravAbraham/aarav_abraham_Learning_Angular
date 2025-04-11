@@ -5,12 +5,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HighlightOnFocusDirective } from '../components/highlight-on-focus.directive';
 import { HoverHighlightDirective } from '../directives/hover-highlight.directive';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card'; 
 @Component({
   selector: 'app-modify-list-item',
   templateUrl: './modify-list-item.component.html',
   styleUrls: ['./modify-list-item.component.scss'],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,HighlightOnFocusDirective,HoverHighlightDirective]
+  imports: [CommonModule, ReactiveFormsModule,HighlightOnFocusDirective,HoverHighlightDirective,
+    MatFormFieldModule,MatInputModule,MatCardModule,MatTooltipModule
+  ]
 })
 export class ModifyListItemComponent {
   form!: FormGroup;

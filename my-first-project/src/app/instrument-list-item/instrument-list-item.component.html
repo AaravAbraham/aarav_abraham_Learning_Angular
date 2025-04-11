@@ -1,8 +1,14 @@
-  <div [appHoverHighlight]="'lightblue'" class="accessory-item">
-    <h3>{{ product.id }} - {{ product.name }}</h3>
-    <p>Type: {{ product.type | uppercase }}</p>
-    <p>Description: {{ product.description }}</p>
+<mat-card [appHoverHighlight]="'lightblue'" class="accessory-item">
+  <mat-card-header>
+    <mat-card-title>{{ product.id }} - {{ product.name }}</mat-card-title>
+    <mat-card-subtitle>
+      <span>{{ product.type | uppercase }}</span>  
+    </mat-card-subtitle>
+  </mat-card-header>
 
-    <p>Price: ${{ product.price | priceTag }}</p>
+  <mat-card-content>
+    <p>Description: {{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price | priceTag}}</p>
     <p>{{ today | date:'fullDate' }}</p>
-  </div>
+  </mat-card-content>
+</mat-card>

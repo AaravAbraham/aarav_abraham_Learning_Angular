@@ -9,6 +9,12 @@ import { ModifyListItemComponent } from './modify-list-item/modify-list-item.com
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
 import { HighlightOnFocusDirective } from './components/highlight-on-focus.directive';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card'; 
+
 @NgModule({
   declarations: [
     HighlightOnFocusDirective,
@@ -17,7 +23,11 @@ import { HighlightOnFocusDirective } from './components/highlight-on-focus.direc
     InstrumentListComponent,
     InstrumentListItemComponent ,
     ModifyListItemComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,MatButtonModule,MatTooltipModule
+
   ],
   imports: [
     BrowserModule,

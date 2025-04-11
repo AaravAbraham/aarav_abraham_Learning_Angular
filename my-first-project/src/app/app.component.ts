@@ -7,9 +7,18 @@ import { StoreService } from './services/instrument-store.service';
 import { PriceTagPipe } from './pipes/price-tag.pipe';
 import {RouterLinkActive,RouterOutlet,RouterLink } from '@angular/router';
 import { HoverHighlightDirective } from './directives/hover-highlight.directive';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @Component({
   selector: 'app-root',
-  imports:[NgFor,InstrumentListComponent,RouterLink,RouterLinkActive,RouterOutlet,CommonModule,PriceTagPipe,HoverHighlightDirective],
+  imports:[NgFor,InstrumentListComponent,RouterLink,RouterLinkActive,RouterOutlet,CommonModule,PriceTagPipe,HoverHighlightDirective
+    ,MatButtonModule,MatInputModule,MatFormFieldModule,MatTooltipModule,MatCardModule,MatToolbarModule
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

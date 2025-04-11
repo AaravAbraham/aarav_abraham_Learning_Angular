@@ -1,21 +1,27 @@
-
 <body>
-  <div class="navigate">
-  <nav>
-    <a routerLink="home" routerLinkActive="active">Home</a>
-    <a routerLink="modify" routerLinkActive="active">Modify List</a> 
-  </nav>
-</div>
-<div class="product-list">
-  <h2>Product List</h2>
-  <div *ngFor="let product of products" [appHoverHighlight]="'lightblue'">
-    <h3>{{ product.name }}</h3>
-    <p>{{ product.description || 'No description available' }}</p>
-    <p><strong>Price: </strong>$ {{ product.price | priceTag }} </p>
-    <p><strong>Type: </strong>{{ product.type }}</p>
-    <p><strong>{{ today | date:'fullDate' }}</strong></p>
-    
+  <mat-toolbar color="primary">
+    <span>My Instrument Store</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/modify">Modify</button>
+  </mat-toolbar>
+
+  <div class="product-list">
+    <h2 class="mat-headline">Product List</h2>
+
+    <mat-card *ngFor="let product of products" [appHoverHighlight]="'lightblue'" class="mb-4">
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.type }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ product.description || 'No description available' }}</p>
+        <p><strong>Price:</strong> ${{ product.price | priceTag }}</p>
+        <p><strong>Date:</strong> {{ today | date:'fullDate' }}</p>
+      </mat-card-content>
+    </mat-card>
   </div>
-</div>
-<router-outlet></router-outlet>
+
+  <router-outlet></router-outlet>
 </body>
